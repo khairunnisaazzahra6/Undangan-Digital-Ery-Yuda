@@ -219,8 +219,12 @@
                 return;
             }
 
-            // Generate link berdasarkan lokasi file saat ini
-            const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+            // Ambil root domain/folder utama sebelum file admin.html
+            const currentPath = window.location.pathname;
+            const parentPath = currentPath.substring(0, currentPath.lastIndexOf('/'));
+            const baseUrl = window.location.origin + parentPath + '/';
+            
+            // Arahkan langsung ke index.html utama
             const targetUrl = baseUrl + 'index.html?to=' + encodeURIComponent(nameInput);
 
             document.getElementById('successInfo').innerText = `Link Undangan Berhasil Dibuat!`;

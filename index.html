@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Ery & Yuda</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Animasi Masuk Otomatis yang Simpel & Indah */
+        @keyframes autoFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .auto-anim {
+            animation: autoFadeUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="gate-closed">
+
+    <div class="gold-dust-container" id="goldDustContainer"></div>
+
+    <div class="phone-container" id="mainContainer">
+        
+        <!-- COVER / HALAMAN UTAMA -->
+        <div id="cover">
+            <div class="cover-content">
+                <p class="anim-title auto-anim" style="font-family: 'Cinzel', serif; letter-spacing: 3px; font-size: 0.7rem; color: #e6c587; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">THE WEDDING OF</p>
+                
+                <div class="couple-name-box">
+                    <div class="groom anim-groom auto-anim">Ery Filhusada</div>
+                    <div class="connector anim-connector">&</div>
+                    <div class="bride anim-bride auto-anim">Joko Wahyuda</div>
+                </div>
+
+                <p class="anim-date auto-anim" style="font-size: 0.8rem; color: #f0e6d2; margin-top: 0.1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Minggu, 04 Oktober 2026</p>
+                
+                <div class="guest-box anim-guest auto-anim">
+    <p style="font-size: 0.7rem; color: #ddd;">Kepada Yth:</p>
+    <p style="font-size: 0.9rem; font-weight: 600; color: #fff; margin-top: 0.1rem;">Bapak/Ibu/Saudara/i</p>
+    <p style="font-size: 0.95rem; font-weight: 700; color: #e6c587; margin-top: 0.1rem;" id="guest-name">Tamu Undangan</p>
+</div>
+
+                <button class="btn-gold anim-btn auto-anim" onclick="openInvitation()" style="position: relative; z-index: 10; padding: 0.6rem 1.6rem; font-size: 0.85rem; margin-top: 0.5rem;">
+                    <i class="fa-solid fa-envelope-open"></i> Buka Undangan
+                </button>
+            </div>
+
+            <!-- Kipas Kayon di Bawah Cover -->
+            <div class="cover-fan-container">
+                <div class="fan-wrapper fan-left-wrap">
+                    <img src="assets/kipas-kayon-kiri.png" alt="Kipas Kayon Kiri" class="fan-img">
+                </div>
+                <div class="fan-wrapper fan-right-wrap">
+                    <img src="assets/kipas-kayon-kanan.png" alt="Kipas Kayon Kanan" class="fan-img">
+                </div>
+            </div>
+
+            <img src="assets/wayang.png" alt="Wayang Kulit" class="cover-wayang">
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section fade-in" id="home">
+            <div class="hero-kayon-top">
+                <img src="assets/kayon.png" alt="Kayon Wayang" class="kayon-img">
+            </div>
+
+            <div class="cloud-top"></div>
+
+            <div class="hero-content">
+                <p class="auto-anim" style="font-family: 'Cinzel', serif; color: var(--secondary-color); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 0.3rem;">The Wedding of</p>
+                <h2 class="shimmer-gold" style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--primary-color); font-weight: 700; margin-bottom: 0.3rem;">Ery & Yuda</h2>
+                <p class="auto-anim" style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem;">Minggu, 04 Oktober 2026</p>
+                
+                <button class="btn-save-date auto-anim" onclick="document.getElementById('countdown-section').scrollIntoView({ behavior: 'smooth' })">
+                    <i class="fa-regular fa-calendar-check"></i> Save The Date
+                </button>
+            </div>
+
+            <div class="hero-wayang-bottom">
+                <img src="assets/wayang.png" alt="Wayang Bawah" class="wayang-bot-img">
+            </div>
+        </section>
+
+
+        <!-- COUPLE SECTION -->
+        <section class="nav-item" id="couple">
+            <div class="content-wrapper">
+                <div style="margin-bottom: 1.2rem;">
+                    <p class="anim-fade auto-anim" style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--secondary-color); margin-bottom: 0.4rem;">Assalamu'alaikum Wr. Wb</p>
+                    <p class="anim-fade auto-anim" style="font-size: 0.75rem; color: var(--text-light); max-width: 300px; margin: 0 auto; line-height: 1.4;">
+                        Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami.
+                    </p>
+                </div>
+
+                <!-- MEMPELAI WANITA -->
+                <div class="couple-card auto-anim" style="margin-bottom: 1.2rem;">
+                    <div class="couple-img-box" style="width: 90px; height: 120px; margin: 0 auto 0.6rem; border-radius: 6px; overflow: hidden; border: 2px solid var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                        <img src="assets/bride.png" alt="Ery Filhusada" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="shimmer-gold" style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--primary-color); margin-bottom: 0.2rem;">Ery Filhusada</h3>
+                    <p style="font-size: 0.75rem; color: var(--text-light); max-width: 260px; margin: 0 auto; line-height: 1.3;">
+                        Putri Dari Bapak Iswandi (Si'is) dan Ibu Armiati
+                    </p>
+                </div>
+
+                <div class="auto-anim" style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--secondary-color); margin: 0.5rem 0;">&amp;</div>
+
+                <!-- MEMPELAI PRIA -->
+                <div class="couple-card auto-anim" style="margin-bottom: 1rem;">
+                    <div class="couple-img-box" style="width: 90px; height: 120px; margin: 0 auto 0.6rem; border-radius: 6px; overflow: hidden; border: 2px solid var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                        <img src="assets/groom.png" alt="Joko Wahyuda" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 class="shimmer-gold" style="font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--primary-color); margin-bottom: 0.2rem;">Joko Wahyuda</h3>
+                    <p style="font-size: 0.75rem; color: var(--text-light); max-width: 260px; margin: 0 auto; line-height: 1.3;">
+                        Putra Dari Bapak Sido dan Ibu Janem (Almh)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+         <!-- QUOTE SECTION -->
+        <section class="event-card floating-ornament" id="quote-section" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 4rem 1.5rem; text-align: center; background: url('assets/background.png') center/cover no-repeat;">
+            
+            <div class="auto-anim" style="margin-bottom: -10px; z-index: 2;">
+                <img src="assets/wayang-atas.png" alt="Ornamen Wayang" style="width: 150px; height: auto;">
+            </div>
+
+            <div class="auto-anim" style="background: rgba(255, 255, 255, 0.85); border: 1.5px solid var(--secondary-color); border-radius: 8px; padding: 1.8rem 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 320px; width: 100%; position: relative;">
+                <p class="anim-fade" style="font-size: 0.75rem; color: var(--text-dark); line-height: 1.5; font-style: italic; margin-bottom: 0.8rem;">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                </p>
+                <p style="font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--secondary-color); font-weight: bold;">
+                    (QS. Ar-Rum: 21)
+                </p>
+            </div>
+        </section>
+
+         <!-- KISAH CINTA / OUR JOURNEY SECTION -->
+        <section class="event-card floating-ornament" id="journey" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 4rem 1.5rem; text-align: left; background: url('assets/background.png') center/cover no-repeat; position: relative;">
+            
+            <!-- Judul Atas -->
+            <div class="auto-anim" style="text-align: center; margin-bottom: 2.5rem; width: 100%;">
+                <p style="font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--secondary-color); letter-spacing: 2px; margin-bottom: 0.3rem;">OUR JOURNEY</p>
+                <h2 class="anim-fade" style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--primary-color); font-weight: normal;">Kisah Cinta</h2>
+            </div>
+
+            <!-- Container Timeline -->
+            <div class="event-card floating-ornament" style="position: relative; width: 100%; max-width: 340px; padding-left: 20px;">
+                
+                <!-- Garis Vertikal Timeline -->
+                <div style="position: absolute; left: 68px; top: 10px; bottom: 10px; width: 1.5px; background: rgba(139, 111, 71, 0.4);"></div>
+
+                <!-- Item 1: 2019 -->
+                <div style="display: flex; align-items: flex-start; margin-bottom: 2rem; position: relative;">
+                    <div style="width: 50px; font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--secondary-color); font-weight: bold; padding-top: 2px;">
+                        2020
+                    </div>
+                    <div style="width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; margin: 4px 14px 0 6px; box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.2); z-index: 2;"></div>
+                    <div style="flex: 1;">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--primary-color); margin-bottom: 0.2rem;">Pertemuan Pertama</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-dark); line-height: 1.4;">Pertemuan awal yang menjadi awal mula jalinan cerita kami.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: 2021 -->
+                <div style="display: flex; align-items: flex-start; margin-bottom: 2rem; position: relative;">
+                    <div style="width: 50px; font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--secondary-color); font-weight: bold; padding-top: 2px;">
+                        2022
+                    </div>
+                    <div style="width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; margin: 4px 14px 0 6px; box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.2); z-index: 2;"></div>
+                    <div style="flex: 1;">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--primary-color); margin-bottom: 0.2rem;">Menjalin Hubungan</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-dark); line-height: 1.4;">Memutuskan untuk berkomitmen dan berjalan bersama menghadapi harinya.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: 2025 -->
+                <div style="display: flex; align-items: flex-start; margin-bottom: 2rem; position: relative;">
+                    <div style="width: 50px; font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--secondary-color); font-weight: bold; padding-top: 2px;">
+                        2025
+                    </div>
+                    <div style="width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; margin: 4px 14px 0 6px; box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.2); z-index: 2;"></div>
+                    <div style="flex: 1;">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--primary-color); margin-bottom: 0.2rem;">Lamaran</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-dark); line-height: 1.4;">Momen berharga saat niat suci diutarakan di hadapan kedua keluarga.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: 2026 -->
+                <div style="display: flex; align-items: flex-start; position: relative;">
+                    <div style="width: 50px; font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--secondary-color); font-weight: bold; padding-top: 2px;">
+                        2026
+                    </div>
+                    <div style="width: 12px; height: 12px; background: var(--secondary-color); border-radius: 50%; margin: 4px 14px 0 6px; box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.2); z-index: 2;"></div>
+                    <div style="flex: 1;">
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--primary-color); margin-bottom: 0.2rem;">Pernikahan</h3>
+                        <p style="font-size: 0.75rem; color: var(--text-dark); line-height: 1.4;">Mengikat janji suci dan memulai babak kehidupan baru bersama.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COUNTDOWN & DETAIL ACARA SECTION -->
+        <section class="event-card floating-ornament" id="countdown-section" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 4rem 1.5rem; text-align: center; background: url('assets/background.png') center/cover no-repeat; position: relative;">
+            
+            <div class="auto-anim" style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--primary-color); margin-bottom: 1.5rem; letter-spacing: 1px;">
+                MENUJU HARI BAHAGIA
+            </div>
+
+            <!-- Kotak Countdown -->
+            <div class="auto-anim" style="display: flex; gap: 8px; margin-bottom: 2rem;">
+                <div style="background: #5a3e2b; color: #fff; padding: 10px 12px; border-radius: 6px; min-width: 55px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.1rem; font-weight: bold; font-family: monospace;" id="days">---</div>
+                    <div style="font-size: 0.55rem; letter-spacing: 0.5px; margin-top: 2px;">HARI</div>
+                </div>
+                <div style="background: #5a3e2b; color: #fff; padding: 10px 12px; border-radius: 6px; min-width: 55px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.1rem; font-weight: bold; font-family: monospace;" id="hours">--</div>
+                    <div style="font-size: 0.55rem; letter-spacing: 0.5px; margin-top: 2px;">JAM</div>
+                </div>
+                <div style="background: #5a3e2b; color: #fff; padding: 10px 12px; border-radius: 6px; min-width: 55px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.1rem; font-weight: bold; font-family: monospace;" id="minutes">--</div>
+                    <div style="font-size: 0.55rem; letter-spacing: 0.5px; margin-top: 2px;">MENIT</div>
+                </div>
+                <div style="background: #5a3e2b; color: #fff; padding: 10px 12px; border-radius: 6px; min-width: 55px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="font-size: 1.1rem; font-weight: bold; font-family: monospace;" id="seconds">--</div>
+                    <div style="font-size: 0.55rem; letter-spacing: 0.5px; margin-top: 2px;">DETIK</div>
+                </div>
+            </div>
+
+            <!-- KARTU AKAD NIKAH -->
+            <div class="event-card floating-ornament" style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(139, 111, 71, 0.3); border-radius: 12px; padding: 1.2rem; width: 100%; max-width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 1rem;">
+                <div style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--primary-color); font-weight: bold; margin-bottom: 0.4rem; letter-spacing: 0.5px;">
+                    AKAD NIKAH
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dark); margin-bottom: 0.3rem;">
+                    Selasa, 29 September 2026
+                </div>
+                <div style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 0.5rem;">
+                    Pukul : 14.00 WIB s/d Selesai
+                </div>
+                <div style="font-size: 0.7rem; color: var(--text-dark); line-height: 1.4;">
+                    Kantor KUA Sungai Salak, Kec. Tempuling
+                </div>
+            </div>
+
+            <!-- KARTU RESEPSI PERNIKAHAN -->
+            <div class="event-card floating-ornament" style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(139, 111, 71, 0.3); border-radius: 12px; padding: 1.2rem; width: 100%; max-width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
+                <div style="font-family: 'Cinzel', serif; font-size: 1rem; color: var(--primary-color); font-weight: bold; margin-bottom: 0.4rem; letter-spacing: 0.5px;">
+                    RESEPSI PERNIKAHAN
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dark); margin-bottom: 0.3rem;">
+                    Minggu, 04 Oktober 2026
+                </div>
+                <div style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 0.5rem;">
+                    Pukul : 09.00 WIB s/d Selesai
+                </div>
+                <div style="font-size: 0.7rem; color: var(--text-dark); line-height: 1.4; margin-bottom: 1rem;">
+                    Kediaman Mempelai Wanita<br>
+                    Jl. Propilat Parit Mesjid RT.03 RW.04, Desa Mumpa, Kec. Tempuling
+                </div>
+
+                <!-- Tombol Google Maps -->
+                <a href="https://maps.app.goo.gl/JGfvfYXEowcbEEPYA" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: linear-gradient(135deg, #8b6f47 0%, #634d2c 100%); color: #fff; text-decoration: none; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; box-shadow: 0 4px 10px rgba(0,0,0,0.15); width: 100%;">
+                    <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Buka Google Maps
+                </a>
+            </div>
+        </section>
+
+        <!-- AMPLOP DIGITAL SECTION -->
+        <section class="nav-item" id="amplop" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 4rem 1.5rem; text-align: center; background: url('assets/background.png') center/cover no-repeat;">
+            
+            <div class="auto-anim" style="background: linear-gradient(135deg, #8b6f47 0%, #634d2c 100%); color: #fff; padding: 0.7rem 2rem; border-radius: 30px; font-family: 'Cinzel', serif; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-bottom: 1.2rem; letter-spacing: 1px;">
+                Amplop Digital
+            </div>
+
+            <p class="auto-anim" style="font-size: 0.75rem; color: var(--text-light); max-width: 300px; margin: 0 auto 1.5rem; line-height: 1.4;">
+                Doa restu Anda merupakan karunia yang sangat berarti bagi kami, dan jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara cashless.
+            </p>
+
+            <!-- KARTU REKENING 1 (DANA Erys) -->
+            <div class="event-card floating-ornament" style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(139, 111, 71, 0.3); border-radius: 12px; padding: 1.2rem; width: 100%; max-width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 1rem; position: relative; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 24px; background: #e0d4be; border-radius: 4px; position: relative;">
+                        <div style="position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px; border: 1px solid #bfa782; border-radius: 2px;"></div>
+                    </div>
+                    <span style="font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.1rem; color: #0066ae; font-style: italic;">DANA</span>
+                </div>
+                <div style="font-family: monospace; font-size: 1.15rem; font-weight: bold; color: var(--text-dark); margin-bottom: 0.2rem; letter-spacing: 1px;" id="rekening1">
+                    082218090455
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Ery Filhusada
+                </div>
+                <button onclick="navigator.clipboard.writeText('082218090455'); alert('Nomor DANA berhasil disalin!');" style="display: flex; align-items: center; gap: 6px; background: #f4f0ea; border: 1px solid #d4c5b9; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; color: var(--text-dark); cursor: pointer; margin-left: auto;">
+                    <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                    Copy
+                </button>
+            </div>
+
+            <!-- KARTU REKENING 2 (DANA Joko) -->
+            <div class="event-card floating-ornament" style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(139, 111, 71, 0.3); border-radius: 12px; padding: 1.2rem; width: 100%; max-width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 1.5rem; position: relative; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 24px; background: #e0d4be; border-radius: 4px; position: relative;">
+                        <div style="position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px; border: 1px solid #bfa782; border-radius: 2px;"></div>
+                    </div>
+                    <span style="font-family: 'Cinzel', serif; font-weight: bold; font-size: 1.1rem; color: #0066ae; font-style: italic;">DANA</span>
+                </div>
+                <div style="font-family: monospace; font-size: 1.15rem; font-weight: bold; color: var(--text-dark); margin-bottom: 0.2rem; letter-spacing: 1px;" id="rekening2">
+                    085165545463
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Joko Wahyuda
+                </div>
+                <button onclick="navigator.clipboard.writeText('085165545463'); alert('Nomor DANA berhasil disalin!');" style="display: flex; align-items: center; gap: 6px; background: #f4f0ea; border: 1px solid #d4c5b9; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; color: var(--text-dark); cursor: pointer; margin-left: auto;">
+                    <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>
+                    Copy
+                </button>
+            </div>
+
+            <!-- TOMBOL KONFIRMASI WHATSAPP -->
+            <a class="event-card floating-ornament" href="https://wa.me/6285165545463?text=Halo%20,%20saya%20ingin%20mengirimkan%20konfirmasi%20hadiah/amplop%20digital%20untuk%20pernikahan%20Ery%20%26%20Joko." target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 30px; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 15px rgba(37,211,102,0.3);">
+                <svg style="width: 18px; height: 18px;" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Konfirmasi Hadiah via WhatsApp
+            </a>
+        </section>
+
+        <!-- RSVP & UCAPAN SECTION -->
+<section class="fade-in" id="rsvp" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 7rem 1.5rem 4rem; text-align: center; background: url('assets/background-c.png') center/cover no-repeat; position: relative; overflow: hidden;">
+            
+            <h2 class="auto-anim" style="font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: normal; font-style: italic;">
+                Ucapkan Sesuatu
+            </h2>
+            <p class="auto-anim" style="font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--secondary-color); margin-bottom: 1.5rem;">
+                Berikan Ucapan &amp; Doa Restu
+            </p>
+
+            <!-- Form RSVP (Terhubung ke rsvp.js) -->
+            <div class="auto-anim" style="background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(139, 111, 71, 0.3); border-radius: 12px; padding: 1.5rem 1.2rem; width: 100%; max-width: 320px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); text-align: left; margin-bottom: 1.5rem; z-index: 2;">
+                
+                <form id="rsvp-form">
+                    <div style="margin-bottom: 1rem;">
+                        <input type="text" id="name" name="name" required placeholder="Nama Kamu" style="width: 100%; padding: 0.7rem 1rem; border: 1px solid #d4c5b9; border-radius: 6px; font-size: 0.8rem; background: #fff; color: var(--text-dark); outline: none; box-sizing: border-box;">
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <textarea rows="4" id="message" name="message" required placeholder="Berikan Ucapan &amp; Doa" style="width: 100%; padding: 0.7rem 1rem; border: 1px solid #d4c5b9; border-radius: 6px; font-size: 0.8rem; background: #fff; color: var(--text-dark); outline: none; resize: none; box-sizing: border-box;"></textarea>
+                    </div>
+
+                    <div style="font-size: 0.8rem; color: var(--text-dark); margin-bottom: 0.6rem; font-weight: 500;">
+                        Konfirmasi Kehadiran ?
+                    </div>
+                    
+                    <div style="display: flex; gap: 8px; margin-bottom: 1.2rem;">
+                        <label style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #28a745; padding: 8px; border-radius: 6px; font-size: 0.75rem; color: #28a745; cursor: pointer; background: #fff;">
+                            <input type="radio" name="attendance" value="Hadir" checked style="accent-color: #28a745;"> Hadir
+                        </label>
+                        <label style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #dc3545; padding: 8px; border-radius: 6px; font-size: 0.75rem; color: #dc3545; cursor: pointer; background: #fff;">
+                            <input type="radio" name="attendance" value="Tidak Hadir" style="accent-color: #dc3545;"> Tidak Hadir
+                        </label>
+                    </div>
+
+                    <button type="submit" style="width: 100%; background: linear-gradient(135deg, #8b6f47 0%, #634d2c 100%); color: #fff; border: none; padding: 0.75rem; border-radius: 6px; font-family: 'Cinzel', serif; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); letter-spacing: 1px;">
+                        Kirim (<span id="wish-count">0</span>)
+                    </button>
+                </form>
+            </div>
+
+            <!-- Kotak Daftar Ucapan Tamu (Guestbook / Wishes List) -->
+            <div class="event-card floating-ornament" style="width: 100%; max-width: 320px; z-index: 2;">
+                <h3 style="text-align: center; color: var(--primary-color); font-family: 'Cinzel', serif; font-size: 1rem; margin-bottom: 12px;">Ucapan & Doa Tamu</h3>
+                <div id="wishes-list" style="max-height: 350px; overflow-y: auto; padding-right: 4px;">
+                    <p style="text-align: center; color: #888; font-size: 0.8rem;">Memuat ucapan...</p>
+                </div>
+                <button id="load-more" style="display: none; width: 100%; margin-top: 10px; background: transparent; border: 1px solid var(--secondary-color); color: var(--secondary-color); padding: 6px; border-radius: 6px; font-size: 0.75rem; cursor: pointer;">Muat Lebih Banyak</button>
+            </div>
+        </section>
+
+        <!-- CLOSING / PENUTUP SECTION -->
+        <section class="fade-in" id="closing" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 3rem 1.5rem 5rem; text-align: center; background: url('assets/background.png') center/cover no-repeat; position: relative;">
+            
+            <div class="auto-anim" style="width: 100px; height: 125px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(139, 111, 71, 0.3); border-radius: 50% 50% 10px 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); overflow: hidden; position: relative; z-index: 2;">
+                <img src="assets/couple-illustration.png" alt="Pengantin" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <p class="auto-anim" style="font-size: 0.7rem; color: var(--text-dark); max-width: 290px; margin: 0 auto 0.8rem; line-height: 1.4; z-index: 2;">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+            </p>
+
+            <p class="auto-anim" style="font-family: 'Cinzel', serif; font-size: 0.75rem; color: var(--secondary-color); margin-bottom: 0.8rem; z-index: 2;">
+                Wassalamu'alaikum Wr. Wb.
+            </p>
+
+            <h2 class="auto-anim" style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--primary-color); margin-bottom: 1.2rem; font-weight: normal; z-index: 2;">
+                Ery &amp; Joko
+            </h2>
+            
+            <p class="auto-anim" style="font-size: 0.75rem; color: var(--text-dark); margin-bottom: 1rem; letter-spacing: 0.5px; z-index: 2;">
+                Kami yang berbahagia
+            </p>
+
+            <div class="auto-anim" style="display: flex; justify-content: space-around; width: 100%; max-width: 340px; margin-bottom: 1.5rem; z-index: 2; text-align: center;">
+                <div style="flex: 1; padding: 0 5px;">
+                    <div style="font-family: 'Great Vibes', cursive, serif; font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 0.3rem;">
+                        Keluarga
+                    </div>
+                    <p style="font-size: 0.65rem; color: var(--text-dark); line-height: 1.3;">
+                        Bpk. Sido <br>
+                        Ibu Janem (Almh)
+                    </p>
+                </div>
+
+                <div style="flex: 1; padding: 0 5px;">
+                    <div style="font-family: 'Great Vibes', cursive, serif; font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 0.3rem;">
+                        Keluarga
+                    </div>
+                    <p style="font-size: 0.65rem; color: var(--text-dark); line-height: 1.3;">
+                        Bpk. Iswandi (Si'is)<br>
+                        Ibu Armiati
+                    </p>
+                </div>
+            </div>
+
+            <p class="auto-anim" style="font-size: 0.7rem; color: var(--text-light); margin-bottom: 0.8rem; letter-spacing: 0.5px; z-index: 2;">
+                Created by Collaboration:
+            </p>
+
+            <div class="auto-anim" style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 0.8rem; z-index: 2;">
+                <div style="width: 55px; height: 55px; background: #2c1d11; border-radius: 10px; padding: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/logo-ra.png" alt="Logo 1" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
+                </div>
+                <span style="font-family: 'Cinzel', serif; color: var(--secondary-color); font-size: 0.9rem;">×</span>
+                <div style="width: 55px; height: 55px; background: #fff; border-radius: 10px; padding: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; border: 1px solid #d4c5b9;">
+                    <img src="assets/logo-anteiev.jpeg" alt="Logo 2" style="width: 100%; height: 100%; object-fit: contain; border-radius: 6px;">
+                </div>
+            </div>
+
+            <p class="auto-anim" style="font-size: 0.7rem; color: var(--text-dark); margin-bottom: 1rem; z-index: 2;">
+                Khairunnisa Azzahra × Chairil Print Rumbai
+            </p>
+
+            <div class="auto-anim" style="display: flex; gap: 8px; width: 100%; max-width: 300px; justify-content: center; margin-bottom: 1rem; z-index: 2;">
+                <a href="https://instagram.com/khrnnsazzhra_" target="_blank" style="flex: 1; background: #fff; border: 1px solid #d4c5b9; padding: 6px 10px; border-radius: 20px; font-size: 0.65rem; color: var(--text-dark); text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;">
+                    @khrnnsazzhra_
+                </a>
+                <a href="https://wa.me/6282171752203" target="_blank" style="flex: 1; background: #fff; border: 1px solid #d4c5b9; padding: 6px 10px; border-radius: 20px; font-size: 0.65rem; color: var(--text-dark); text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;">
+                    0821-7175-2203
+                </a>
+            </div>
+
+            <p class="auto-anim" style="font-size: 0.6rem; color: var(--text-light); z-index: 2; margin-top: 0.2rem; font-style: italic;">
+                Music: Safira Inema – Kasetyan Jati
+            </p>
+        </section>
+
+        <!-- BACKGROUND AUDIO -->
+        <div class="music-btn" id="music-btn">
+            <i class="fa-solid fa-compact-disc" id="musicIcon"></i>
+        </div>
+        <audio id="bgMusic" loop>
+            <source src="assets/wedding-song.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- FLOATING NAVIGATION BAR -->
+        <nav class="floating-nav" style="display: flex; overflow-x: auto; gap: 12px; padding: 0.5rem 1rem; scrollbar-width: none; -ms-overflow-style: none;">
+            <a href="#home" class="nav-item active" title="Home"><i class="fa-solid fa-house"></i></a>
+            <a href="#couple" class="nav-item" title="Mempelai"><i class="fa-solid fa-user-group"></i></a>
+            <a href="#quote-section" class="nav-item" title="Quotes"><i class="fa-solid fa-quote-left"></i></a>
+            <a href="#journey" class="nav-item" title="Kisah Cinta"><i class="fa-solid fa-heart-pulse"></i></a>
+            <a href="#countdown-section" class="nav-item" title="Acara & Countdown"><i class="fa-solid fa-calendar-days"></i></a>
+            <a href="#amplop" class="nav-item" title="Amplop Digital"><i class="fa-solid fa-wallet"></i></a>
+            <a href="#rsvp" class="nav-item" title="RSVP & Ucapan"><i class="fa-solid fa-comments"></i></a>
+            <a href="#closing" class="nav-item" title="Penutup"><i class="fa-solid fa-flag-checkered"></i></a>
+        </nav>
+
+    </div>
+
+    <!-- JS Links -->
+    <script src="js/main.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rsvp.js"></script>
+</body>
+</html>

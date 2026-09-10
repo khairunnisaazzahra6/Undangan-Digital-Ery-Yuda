@@ -1,0 +1,557 @@
+:root {
+    --primary-color: #5c3b21;
+    --secondary-color: #8c6239;
+    --accent-gold: #c5a059;
+    --bg-color: #f7f4ee;
+    --card-bg: #ffffff;
+    --text-dark: #3a2e2b;
+    --text-light: #7a6e6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #2b211c;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.phone-container {
+    width: 100%;
+    max-width: 430px;
+    height: 100vh;
+    max-height: 932px;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    scroll-behavior: smooth;
+}
+
+.phone-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- BACKGROUND UNTUK SETIAP SECTION --- */
+section {
+    position: relative;
+    min-height: 100vh;
+    padding: 4rem 1.5rem 5rem;
+    text-align: center;
+    background: url('../assets/background.png') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* --- GANTI BACKGROUND KHUSUS SECTION TERTENTU --- */
+.hero-section {
+    background: url('../assets/background.png') center/cover no-repeat !important;
+}
+
+#couple {
+    background: url('../assets/background-couple.png') center/cover no-repeat !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    padding: 4rem 1.5rem !important;
+    text-align: center;
+}
+
+#couple .content-wrapper {
+    transform: translateY(-20px);
+}
+
+#journey {
+    background: url('../assets/background-couple.png') center/cover no-repeat !important;
+}
+#rsvp {
+    background: url('../assets/background-couple.png') center/cover no-repeat !important;
+}
+
+#event {
+    background: url('../assets/background.png') center/cover no-repeat !important;
+}
+
+#closing {
+    background: url('../assets/background-couple.png') center/cover no-repeat !important;
+}
+
+/* --- COVER SECTION DENGAN BACKGROUND & KIPAS KAYON DI BAWAH --- */
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/bg-cover.png') center/cover no-repeat;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 1.2rem 3rem 1.2rem;
+    color: #fff;
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+    overflow: hidden;
+}
+
+#cover.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* KONTEN TEKS SELALU MUNCUL JELAS */
+.cover-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 1 !important;
+}
+
+/* PAKSA TEKS COVER MUNCUL MESKI GATE CLOSED */
+#cover .cover-content [class*="anim-"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Gaya Nama 3 Baris */
+.couple-name-box {
+    margin: 0.5rem 0;
+}
+
+.couple-name-box .groom {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.couple-name-box .connector {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 1.8rem;
+    color: #f0e6d2;
+    margin: -0.3rem 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.couple-name-box .bride {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+.guest-box {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(197, 160, 89, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 260px;
+}
+
+/* --- KIPAS KAYON DI DALAM COVER (POSISI BAWAH BERSILANG) --- */
+.cover-fan-container {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.fan-wrapper {
+    position: absolute;
+    width: 240px;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.9));
+}
+
+.fan-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Kipas Kiri Bersilang di Bawah */
+.fan-left-wrap {
+    left: calc(50% - 145px);
+    transform: rotate(15deg);
+    transform-origin: bottom center;
+}
+
+/* Kipas Kanan Bersilang di Bawah */
+.fan-right-wrap {
+    right: calc(50% - 145px);
+    transform: rotate(-15deg);
+    transform-origin: bottom center;
+}
+
+/* Saat Undangan Dibuka: Kipas membuka ke kiri & kanan luar layar */
+body.gate-opened .fan-left-wrap {
+    transform: translate(-120vw, 30vh) rotate(-50deg);
+    opacity: 0;
+}
+
+body.gate-opened .fan-right-wrap {
+    transform: translate(120vw, 30vh) rotate(50deg);
+    opacity: 0;
+}
+
+/* Ornamen Wayang di Bawah Cover */
+.cover-wayang {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* --- TOMBOL EMAS --- */
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: #2b211c;
+    border: none;
+    padding: 0.6rem 1.6rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+    transition: 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #d4af37;
+    transform: scale(1.05);
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.couple-img {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 100px 100px 10px 10px;
+    border: 3px solid var(--accent-gold);
+    margin: 1.5rem auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.countdown-box {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.8rem 0.4rem;
+    border-radius: 8px;
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.countdown-box small {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.event-card {
+    background: var(--card-bg);
+    border: 1px solid #e6dcce;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.floating-nav {
+    position: fixed;
+    bottom: 20px; /* Jarak dari bawah layar HP supaya tidak mentok */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    margin: -60px auto 15px auto;
+    width: fit-content;
+    max-width: 90%;
+    background: rgba(92, 59, 33, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 40px;
+    z-index: 999;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.floating-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--accent-gold);
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: var(--accent-gold);
+    color: #2b211c;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 95;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- HERO SECTION (SETELAH COVER DIBUKA) --- */
+.hero-kayon-top {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.kayon-img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    margin-top: 7rem;
+}
+
+.btn-save-date {
+    background-color: #6b4423;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn-save-date:hover {
+    background-color: #5c3b21;
+    transform: scale(1.05);
+}
+
+.hero-wayang-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.2;
+    overflow: hidden;
+}
+
+.wayang-bot-img {
+    width: 120%;
+    position: absolute;
+    bottom: -20px;
+    left: -10%;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.anim-fade {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* --- ANIMASI TEKS SAAT SCROLL --- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- EFEK KILAU EMAS (SHIMMER) PADA TEKS/AKSEN --- */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-gold {
+    background: linear-gradient(90deg, var(--accent-gold) 0%, #fff6db 50%, var(--accent-gold) 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+}
+
+/* --- EFEK MELAYANG HALUS (FLOATING) UNTUK ORNAMEN/KARTU --- */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating-ornament {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* --- EFEK PARTIKEL KILAU EMAS (GOLD DUST) --- */
+.gold-dust-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999; /* Supaya ada di atas konten tapi tidak menghalangi klik */
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    background: radial-gradient(circle, #fff6db 0%, var(--accent-gold) 70%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fallDown linear infinite;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-20px) translateX(0) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(105vh) translateX(30px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* --- EFEK DENYUT CAHAYA EMAS (PULSE GLOW) PADA TOMBOL --- */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+.pulse-gold-btn {
+    animation: pulseGlow 2.5s infinite ease-in-out;
+}

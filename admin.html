@@ -211,35 +211,28 @@
         </div>
     </div>
 
-    <script>
+   <script>
         function generateLink() {
-            const nameInput = document.getElementById('guestName').value.trim();
-            if (!nameInput) {
-                alert('Silakan masukkan nama tamu terlebih dahulu, sayang!');
+            const name = document.getElementById('guestName').value.trim();
+            if (!name) {
+                alert('Masukkan nama tamunya dulu ya sayang!');
                 return;
             }
 
-            // Ambil root domain/folder utama sebelum file admin.html
-            const currentPath = window.location.pathname;
-            const parentPath = currentPath.substring(0, currentPath.lastIndexOf('/'));
-            const baseUrl = window.location.origin + parentPath + '/';
-            
-            // Arahkan langsung ke index.html utama
-            const targetUrl = baseUrl + 'index.html?to=' + encodeURIComponent(nameInput);
+            const baseUrl = window.location.origin + window.location.pathname.replace('admin.html', '');
+            const finalLink = baseUrl + '?to=' + encodeURIComponent(name);
 
-            document.getElementById('successInfo').innerText = `Link Undangan Berhasil Dibuat!`;
-            document.getElementById('linkText').innerText = targetUrl;
+            document.getElementById('generatedLinkText').innerText = finalLink;
             document.getElementById('resultBox').classList.add('active');
         }
 
         function copyLink() {
-            const linkText = document.getElementById('linkText').innerText;
+            const linkText = document.getElementById('generatedLinkText').innerText;
             navigator.clipboard.writeText(linkText).then(() => {
-                alert('Link berhasil disalin! Silakan bagikan ke tamu, sayang.');
-            }).catch(err => {
-                console.error('Gagal menyalin:', err);
+                alert('Hore Link berhasil disalin! Siap dikirim ke Tamu 🎉');
             });
         }
     </script>
+    
 </body>
 </html>
